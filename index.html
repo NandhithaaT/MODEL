@@ -1,7 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url='admin-login.html'" />
+  <meta charset="UTF-8" />
+  <title>Welcome - Choose Login</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 40px; text-align: center; }
+    button {
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      background-color: #4caf50;
+      color: white;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
 </head>
-<body></body>
+<body>
+  <h1>Welcome to Event Management</h1>
+  <p>Please select your login type:</p>
+  <button onclick="location.href='admin-login.html'">Admin Login</button>
+  <button onclick="location.href='user-login.html'">User Login</button>
+</body>
 </html>
