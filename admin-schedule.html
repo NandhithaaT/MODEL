@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Schedule</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header><h1>Event Schedule (Admin)</h1></header>
+
+<nav>
+  <ul>
+    <li><a href="admin-manage.html">Manage</a></li>
+    <li><a href="admin-schedule.html">Schedule</a></li>
+    <li><a href="#" onclick="logout()">Logout</a></li>
+  </ul>
+</nav>
+
+<section>
+  <ul id="schedule-list"></ul>
+</section>
+
+<script src="admin-schedule.js"></script>
+<script>
+  function logout() {
+    localStorage.removeItem('role');
+    localStorage.removeItem('username');
+    window.location.href = 'admin-login.html';
+  }
+</script>
+</body>
+</html>

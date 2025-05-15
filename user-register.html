@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header><h1>Event Registration (User)</h1></header>
+
+<nav>
+  <ul>
+    <li><a href="user-register.html">Register</a></li>
+    <li><a href="#" onclick="logout()">Logout</a></li>
+  </ul>
+</nav>
+
+<section>
+  <form id="registration-form">
+    <input type="text" id="attendee-name" placeholder="Your Name" readonly />
+    <select id="select-event"></select>
+    <button type="submit">Register</button>
+  </form>
+
+  <h2>Your Registrations</h2>
+  <ul id="registration-list"></ul>
+</section>
+
+<script src="user-register.js"></script>
+<script>
+  function logout() {
+    localStorage.removeItem('role');
+    localStorage.removeItem('username');
+    window.location.href = 'user-login.html';
+  }
+</script>
+</body>
+</html>

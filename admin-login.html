@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Admin Login</h1>
+  <form id="admin-login-form">
+    <input type="text" id="admin-username" placeholder="Admin Username" required />
+    <input type="password" id="admin-password" placeholder="Password" required />
+    <button type="submit">Login</button>
+  </form>
+  <p id="error-msg" style="color: red;"></p>
+
+  <script>
+    const form = document.getElementById('admin-login-form');
+    const errorMsg = document.getElementById('error-msg');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const username = document.getElementById('admin-username').value.trim();
+      const password = document.getElementById('admin-password').value.trim();
+
+      // Hardcoded admin credentials
+      if (username === 'admin' && password === '1234') {
+        localStorage.setItem('role', 'admin');
+        window.location.href = 'admin-manage.html';
+      } else {
+        errorMsg.textContent = 'Invalid admin credentials';
+      }
+    });
+  </script>
+</body>
+</html>

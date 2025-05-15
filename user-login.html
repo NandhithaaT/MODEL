@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>User Login</h1>
+  <form id="user-login-form">
+    <input type="text" id="user-name" placeholder="Your Name" required />
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('user-login-form');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('user-name').value.trim();
+
+      if (name.length > 0) {
+        localStorage.setItem('role', 'user');
+        localStorage.setItem('username', name);
+        window.location.href = 'user-register.html';
+      }
+    });
+  </script>
+</body>
+</html>
